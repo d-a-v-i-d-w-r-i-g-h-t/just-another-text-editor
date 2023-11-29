@@ -53,8 +53,9 @@ export const getDb = async (id) => {
 
   // get confirmation of the request
   const result = await request;
-  console.log('result.value', result);
+  console.log('data has been retrieved', result);
   return result;
 };
 
+// start the database
 initdb();
