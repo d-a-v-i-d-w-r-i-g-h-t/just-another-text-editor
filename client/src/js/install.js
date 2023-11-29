@@ -12,7 +12,6 @@ window.addEventListener('beforeinstallprompt', (event) => {
   butInstall.classList.toggle('hidden', false);
 });
 
-
 // click event handler on the `butInstall` element
 butInstall.addEventListener('click', async () => {
 
