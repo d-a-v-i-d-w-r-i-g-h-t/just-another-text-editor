@@ -27,7 +27,6 @@ export const putDb = async (content) => {
   const store = tx.objectStore('jate');
 
   // update the data record from the object store (there is only one record)
-  // const request = store.put({ id: id, jate: content });
   const request = store.put({ id: 1, content });
 
   // get confirmation of the request
