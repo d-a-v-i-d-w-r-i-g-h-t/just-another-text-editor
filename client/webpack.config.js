@@ -1,29 +1,12 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
-const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin');
-
-// TODO: Add and configure workbox plugins for a service worker and manifest file.
-// Add plugins to the webpack configuration. InjectManifest, HtmlWebpackPlugin, pwaManifest
-
-// TODO: Add CSS loaders and babel to webpack.
-// Add rules to the webpack configuration. css-loader, babel-loader, style-loader 
-// make sure to add the plugins and rules to the correct configuration object. 
-// 10 properties:
-  // 1) Name,
-  // 2) short name,
-  // 3) start_url,
-  // 4) background color,
-  // 5) theme color,
-  // 6) icons,
-  // 7) description,
-  // 8) publicPath,
-  // 9) inject,
-  // 10) fingerprints,
+const { InjectManifest } = require('workbox-webpack-plugin');
 
 module.exports = () => {
   return {
     mode: 'development',
+    // entry  point for files
     entry: {
       main: './src/js/index.js',
       install: './src/js/install.js'
@@ -33,47 +16,50 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
+      // Webpack plugin that generates html file ad injects bundles
       new HtmlWebpackPlugin({
         template: './index.html',
         title: 'JATE',
       }),
-
-      new GenerateSW(),
       
+      // inject custom service worker
       new InjectManifest({
-        exclude: [/.../, '...'],
-        maximumFileSizeToCacheInBytes: ...,
-        swSrc: '...',
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
       }),
 
+      // create manifest.json file
       new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
         name: 'JATE',
         short_name: 'JATE',
         description: 'Just another text editor',
-        start_url: './',
-        publicPath: './',
         background_color: '#8bb2c7',
         theme_color: '#8bb2c7',
+        start_url: './',
+        publicPath: './',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
-            sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
+            sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+            destination: path.join('assets', 'icons'),
           },
         ],
-        inject: ' ',
-        fingerprints: ' ',
-      })
+      }),
     ],
 
     module: {
       rules: [
         {
+          // css loaders
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
         },
         {
           test: /\.m?js$/,
           exclude: /node_modules/,
+          // use babel-loader in order to use ES6
           use: {
             loader: 'babel-loader',
             options: {
