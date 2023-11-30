@@ -2,13 +2,9 @@
 
 ## Description 
 
-Your GitHub profile is an extremely important aspect of your public identity as a developer. A well-crafted one allows you to show off your work to other developers as well as potential employers. An important component of your GitHub profile—and one that many new developers often overlook—is the README.md file.
+For this project I had to take a simple text editor and implement methods for getting and storing data to an **IndexedDB** database. Together with static asset caching and Local storage as a data backup, the application could then function without an internet connection.
 
-The quality of a README often differentiates a good project from a bad project. A good one takes advantage of the opportunity to explain and showcase what your application does, justify the technologies used, and even talk about some of the challenges you faced and features you hope to implement in the future. A good README helps you stand out among the large crowd of developers putting their work on GitHub.
-
-There's no one right way to structure a good README. There is one very wrong way, however, and that is to not include a README at all or to create a very anemic one. This guide outlines a few best practices. As you progress in your career, you will develop your own ideas about what makes a good README.
-
-At a minimum, your project README needs a title and a short description explaining the what, why, and how. What was your motivation? Why did you build this project? (Note: The answer is not "Because it was a homework assignment.") What problem does it solve? What did you learn? What makes your project stand out? 
+This was a challenging task involving creating a service worker with **Workbox** to cache static assets, bundling with **Webpack**, and employing **Babel** to make the JavaScript code backwards compatible in older browsers. Finally, the application had to generate a ```manifest.json``` file using the **WebpackPwaManifest** plugin, so that it could be installed as a **Progressive Web Application**.
 
 My project is deployed on Heroku at this [link](https://floating-eyrie-53578-efda4f2185f3.herokuapp.com/).
 
@@ -41,11 +37,15 @@ Additionally, the application be installed as a *Progressive Web Application* by
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+I used [Express](https://www.npmjs.com/package/express/v/4.18.2) to manage routing.
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
+I used [idb](https://www.npmjs.com/package/idb) to add functionality to IndexedDB.
 
-If you followed tutorials, include links to those here as well.
+I used [Webpack](https://www.npmjs.com/package/webpack) as a module bundler.
+
+I used [Workbox](https://www.npmjs.com/package/workbox-webpack-plugin) to create a service worker.
+
+I used [Babel](https://babeljs.io/) to make JavaScript backward compatible in older browsers.
 
 
 ## License
