@@ -6,7 +6,7 @@ For this project I had to take a simple text editor and implement methods for ge
 
 This was a challenging task involving creating a service worker with **Workbox** to cache static assets, bundling with **Webpack**, and employing **Babel** to make the JavaScript code backwards compatible in older browsers. Finally, the application had to generate a ```manifest.json``` file using the **WebpackPwaManifest** plugin, so that it could be installed as a **Progressive Web Application**.
 
-My project is deployed on Heroku at this [link](https://floating-eyrie-53578-efda4f2185f3.herokuapp.com/).
+My project is deployed on [Heroku](https://www.heroku.com/) at this [link](https://floating-eyrie-53578-efda4f2185f3.herokuapp.com/).
 
 
 ## Installation
