@@ -22,7 +22,7 @@ Alternatively, the application can be run from its deployed location, [here](htt
 
 ## Usage 
 
-If installed locally for development purposes, the webpack can be built and the application started with a single script command,
+If installed locally for development purposes, the webpack can be built and the application started with a single script command:
 ```
 npm run start
 ```
@@ -30,7 +30,9 @@ Then, the user can simply navigate to ```http://localhost:3000/``` and use the a
 
 Text can be input on any line. The text is saved to both Local storage and IndexedDB whenever the editor window loses focus. In this way it does not require an internet connection after its first load.
 
-Additionally, the application be installed as a *Progressive Web Application* by clicking on the **Install!** button. See a screenshot of the application below.
+Additionally, the application be installed as a *Progressive Web Application* by clicking on the **Install!** button. 
+
+See a screenshot of the application below.
 
 ![JATE Screenshot](assets/images/jate.png)
 
